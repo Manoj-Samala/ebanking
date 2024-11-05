@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - E-Banking</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .widget {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 10px;
+            width: 200px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .widget:hover {
+            transform: scale(1.05);
+        }
+
+        .widget h3 {
+            text-align: center;
+            color: #007bff;
+        }
+
+        .widget a {
+            display: block;
+            text-align: center;
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .widget a:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Welcome to E-Banking</h1>
+    
+    <div class="container">
+        <div class="widget">
+            <h3>Credit</h3>
+            <a href="#">Add Credit</a>
+        </div>
+        <div class="widget">
+            <h3>Debit</h3>
+            <a href="#">Make Debit</a>
+        </div>
+        <div class="widget">
+            <h3>Statement</h3>
+            <a href="#">View Statement</a>
+        </div>
+        <div class="widget">
+            <h3>Change PIN</h3>
+            <a href="#">Change Your PIN</a>
+        </div>
+    </div>
+    <h1>Home</h1>
+    
+<p>Welcome, {{ session['user_id'] }}!</p>
+<a href="{{ url_for('logout') }}">Logout</a>
+</body>
+</html>

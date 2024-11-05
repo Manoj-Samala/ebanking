@@ -1,0 +1,7 @@
+Flask==2.0.3           # or any compatible version
+Werkzeug==2.0.3        # or any compatible version
+pandas==1.5.3          # other dependencies
+numpy==1.23.5          # other dependencies
+seaborn==0.12.2        # other dependencies
+matplotlib==3.6.2      # other dependencies
+

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Full viewport height */
+            margin: 0;
+            padding: 10px; /* Padding to prevent overflow */
+            box-sizing: border-box; /* Include padding in width calculations */
+        }
+
+        h1 {
+            text-align: center;
+            color: #007bff;
+            margin-bottom: 10px;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 15px; /* Padding for the form */
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            width: 100%; /* Responsive width */
+            max-width: 400px; /* Maximum width to fit in view */
+            overflow: hidden; /* Prevent overflow */
+        }
+
+        label {
+            display: block;
+            margin: 5px 0; /* Margin for labels */
+        }
+
+        input[type="text"],
+        input[type="password"],
+        input[type="email"],
+        input[type="tel"] {
+            width: calc(100% - 20px); /* Full width minus padding */
+            padding: 8px; /* Padding for input fields */
+            margin-bottom: 10px; /* Space between fields */
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box; /* Include padding in width calculations */
+        }
+
+        input[type="submit"] {
+            background-color: #007bff;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            width: 100%; /* Full width for submit button */
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3; /* Darker blue on hover */
+        }
+
+        p {
+            text-align: center; /* Center the paragraph */
+            margin-top: 10px; /* Margin for paragraph */
+        }
+
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <form action="" method="post">
+        <h1>Register</h1>
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="first_name">First Name:</label>
+        <input type="text" id="first_name" name="first_name" required>
+
+        <label for="last_name">Last Name:</label>
+        <input type="text" id="last_name" name="last_name" required>
+
+        <label for="phone">Phone:</label>
+        <input type="tel" id="phone" name="phone" required>
+
+        <label for="address">Address:</label>
+        <input type="text" id="address" name="address" required>
+
+        <label for="city">City:</label>
+        <input type="text" id="city" name="city" required>
+
+        <label for="state">State:</label>
+        <input type="text" id="state" name="state" required>
+
+        <label for="zip">Zip:</label>
+        <input type="text" id="zip" name="zip" required>
+
+        <input type="submit" value="Register">
+    </form>
+    <p>Already have an account? <a href="{{ url_for('login') }}">Login</a></p>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <div class="message">
+                {% for message in messages %}
+                    <p>{{ message[1] }}</p>
+                {% endfor %}
+            </div>
+ {% endif %}
+    {% endwith %}
+
+</body>
+</html>
